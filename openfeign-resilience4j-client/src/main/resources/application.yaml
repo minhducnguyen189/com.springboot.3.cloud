@@ -1,0 +1,25 @@
+
+spring:
+  cloud:
+    bootstrap:
+      enabled: true
+
+openfeign:
+  server:
+    uri: "http://localhost:7070"
+
+resilience4j:
+  ratelimiter:
+    instances:
+      openfeign-server:
+        limitForPeriod: 100
+        limitRefreshPeriod: "60s"
+        timeoutDuration: "60s"
+  retry:
+    instances:
+      openfeign-server:
+        maxAttempts: 3
+        waitDuration: "60s"
+        retryExceptions:
+          - "feign.FeignException"
+          - "io.github.resilience4j.ratelimiter.RequestNotPermitted"
