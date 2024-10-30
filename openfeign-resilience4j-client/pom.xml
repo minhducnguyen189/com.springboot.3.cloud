@@ -16,8 +16,10 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring-boot.version>3.3.5</spring-boot.version>
+        <resilience4j-spring-boot3>2.2.0</resilience4j-spring-boot3>
         <spring-cloud.version>2023.0.2</spring-cloud.version>
         <resilience4j-spring-boot3>2.2.0</resilience4j-spring-boot3>
+        <slf4j-api.version>2.1.0-alpha1</slf4j-api.version>
     </properties>
 
     <dependencyManagement>
@@ -54,12 +56,12 @@
         <dependency>
             <groupId>io.github.resilience4j</groupId>
             <artifactId>resilience4j-spring-boot3</artifactId>
-            <version>2.2.0</version>
+            <version>${resilience4j-spring-boot3}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>2.1.0-alpha1</version>
+            <version>${slf4j-api.version}</version>
         </dependency>
 
 
